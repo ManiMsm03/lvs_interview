@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lvsinterview/Provider/provider_list.dart';
 import 'package:lvsinterview/Screen/login_screen.dart';
+import 'package:lvsinterview/Screen/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      home:  LoginScreen(),
+      home:  SplashScreen(),
     );
   }
 }
