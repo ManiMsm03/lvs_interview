@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "434501860224",
+    "project_id": "lvs-interview",
+    "storage_bucket": "lvs-interview.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434501860224:android:0deccea78428ca02561f65",
+        "android_client_info": {
+          "package_name": "com.example.lvsinterview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "434501860224-n1gcj84k003v4qnb2m8c6v21ugvd3m0i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lvsinterview",
+            "certificate_hash": "777fa072a169784700e79a5c85894354a9a6da1f"
+          }
+        },
+        {
+          "client_id": "434501860224-nm9jame6hf33a8e1nb02r6fnmti2q05d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_B0Tmp5VFt4_HNNZiQPeKMEORLJoB_OQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "434501860224-nm9jame6hf33a8e1nb02r6fnmti2q05d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "434501860224-jvkdtr3tbe0d8ggqp4n15d70sipha74l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.lvsinterview"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
