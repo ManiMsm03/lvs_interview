@@ -26,7 +26,7 @@ class LoginScreenProvider extends ChangeNotifier {
 
   Future loginUser(BuildContext context) async {
 
-    String loginUrl = '';
+    String loginUrl = 'loginurl';
 
 
     final response = await _api.postMethod(loginUrl, {

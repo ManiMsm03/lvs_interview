@@ -50,76 +50,92 @@ class DashboardProvider extends ChangeNotifier {
       ModelsListModel(
         "18.3k",
         "1",
-        "Sastha",
+        "model 1",
         'asset/nations/india.jpg',
-        'asset/models/sastha.jpg',
+        'asset/models/india_model_1.png',
         1,
-        'general',
+        'model',
       ),
       ModelsListModel(
         "8.2k",
         "2",
-        "Vijay",
+        "model 2",
         'asset/nations/india.jpg',
-        'asset/models/vj.jpg',
+        'asset/models/india_model_2.jpg',
         1,
-        'hot',
+        'model',
       ),
       ModelsListModel(
         "271.2k",
         "3",
-        "Samantha",
-        'asset/nations/brazil.png',
-        'asset/models/sam.jpg',
-        3,
-        'actress',
+        "model 3",
+        'asset/nations/india.jpg',
+        'asset/models/india_model_3.jpg',
+        1,
+        'hot',
       ),
       ModelsListModel(
-        "4.2k",
+        "111.8k",
         "4",
-        "Mahi",
+        "model 4",
+        'asset/nations/philippines.png',
+        'asset/models/phi_model_1.jpg',
+        2,
+        'hot',
+      ), ModelsListModel(
+        "71.7k",
+        "5",
+        "model 5",
+        'asset/nations/philippines.png',
+        'asset/models/phi_model_2.jpg',
+        2,
+        'model',
+      ),
+      ModelsListModel(
+        "11.8k",
+        "6",
+        "model 6",
+        'asset/nations/brazil.png',
+        'asset/models/brazil_model_1.png',
+        3,
+        'hot',
+      ),  ModelsListModel(
+        "70.5k",
+        "7",
+        "model 7",
+        'asset/nations/brazil.png',
+        'asset/models/brazil_model_2.png',
+        3,
+        'model',
+      ),
+      ModelsListModel(
+        "81.2k",
+        "8",
+        "model 8",
+        'asset/nations/brazil.png',
+        'asset/models/brazil_model_3.png',
+        3,
+        'model',
+      ), ModelsListModel(
+        "12.2k",
+        "9",
+        "Ira Arey",
         'asset/nations/south_Africa.png',
-        'asset/models/ms.jpg',
+        'asset/models/south_africa_model_1jpg.jpg',
         4,
         'cricket',
       ),
-      ModelsListModel(
-        "11.2k",
-        "5",
-        "FZ-S",
-        'asset/nations/south_Africa.png',
-        'asset/models/fz.jpg',
-        4,
-        'bike',
-      ),
-      ModelsListModel(
-        "0.2k",
-        "6",
-        "Tiger",
-        'asset/nations/philippines.png',
-        'asset/models/tiger.jpg',
-        2,
-        'animal',
-      ),
-      ModelsListModel(
-        "10.2k",
-        "7",
-        "Eagle",
-        'asset/nations/south_Africa.png',
-        'asset/models/eagle.jpg',
-        4,
-        'bird',
-      ),
+
     ];
     modelLoading = false;
     notifyListeners();
   }
 
-  bool isFollowing(String id) { // already follow or not
+  bool isFollowing(String id) {
     return _followingIds.contains(id);
   }
 
-  void setType(String type) { // tab type handling function
+  void setType(String type) {
     _currentType = type;
     resetCountry();
     notifyListeners();
@@ -133,7 +149,7 @@ class DashboardProvider extends ChangeNotifier {
       return filteredModels;
     }
   }
-  void toggleFollow(String id) { // follow and unfollow function
+  void toggleFollow(String id) {
     if (_followingIds.contains(id)) {
       _followingIds.remove(id);
     } else {
@@ -142,7 +158,7 @@ class DashboardProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void selectCountry(int index) { // country function
+  void selectCountry(int index) {
     _selectedCountryIndex = index;
     notifyListeners();
   }
@@ -152,7 +168,7 @@ class DashboardProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<ModelsListModel> get filteredModels { // filter models
+  List<ModelsListModel> get filteredModels {
     if (_selectedCountryIndex == 0) {
       return _modelsList;
     }
@@ -162,7 +178,7 @@ class DashboardProvider extends ChangeNotifier {
   }
 
 
-  List<ModelsListModel> get hotModels { // hot topics models
+  List<ModelsListModel> get hotModels {
     var list = _modelsList
         .where((e) => e.topic.toLowerCase() == TextHelper.hot.toLowerCase())
         .toList();
@@ -176,7 +192,7 @@ class DashboardProvider extends ChangeNotifier {
         .toList();
   }
 
-  List<ModelsListModel> get followedModels { // following models
+  List<ModelsListModel> get followedModels {
     var list = _modelsList
         .where((e) => _followingIds.contains(e.id))
         .toList();
@@ -193,7 +209,7 @@ class DashboardProvider extends ChangeNotifier {
 
   Future<void> getCountryList(BuildContext context) async {
 
-    String  countryListUrl = "";
+    String  countryListUrl = "geturl";
 
     final response = await _api.getMethod(countryListUrl);
 
@@ -214,7 +230,7 @@ class DashboardProvider extends ChangeNotifier {
     }
   }
 
-  Future<void> logout() async { // logout function
+  Future<void> logout() async {
     await _auth.signOut();
     notifyListeners();
   }
